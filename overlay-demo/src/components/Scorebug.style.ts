@@ -2,16 +2,24 @@ import styled from "styled-components";
 import Blueteamicon from "../Images/BlueTeam.png";
 import Orangeteamicon from "../Images/OrangeTeam.png";
 
+interface ScorebugOrangeProps {
+  backgroundColor: string;
+}
+
+interface ScorebugBlueProps {
+  backgroundColor: string;
+}
+
 export const GameName = styled.div`
   width: 516px;
   height: 50px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: black;
   position: absolute;
   margin: center;
   top: 94px;
   left: 50%;
   margin-left: -258px;
-  color: black;
+  color: white;
   font-size: 1.5vw;
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
   text-align: center;
@@ -26,6 +34,7 @@ export const ScorebugWrapper = styled.div`
   font-family: "Race Sport Regular";
   margin: auto;
   background-color: rgba(0, 0, 0, 0.5);
+  align-items: center;
 `;
 
 export const ScorebugClock = styled.div`
@@ -45,47 +54,48 @@ justify-content: center;
 export const OrangeTeamName = styled.div`
   height: 94px;
   width: 335px;
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.25);
   color: black;
-  font-size: 1.6vw;
-  margin: auto;
+  font-size: 27px;
   position: absolute;
   top: 1px;
   right: 366px;
-  text-align: center;
+  text-align: right;
   word-wrap: no-wrap;
-  justify-content: fit;
-  display: flex;
   vertical-align: center;
+  line-height: 2em;
+  align-items: center;
 `;
 
-export const ScorebugBlue = styled.div`
+export const ScorebugBlue = styled.div<ScorebugBlueProps>`
   height: 94px;
-  width: 100px;
-  background-color: blue;
+  width: 425px;
+  background-color: ${(props) => props.backgroundColor};
   color: black;
   font-size: 59px;
   margin: auto;
   position: absolute;
   vertical-align: middle;
   top: 0px;
-  left: 703px;
-  justify-content: center;
-  text-align: center;
+  left: 366px;
+  justify-content: middle;
+  text-align: right;
+  padding-right: 20px;
 `;
 
-export const ScorebugOrange = styled.div`
+export const ScorebugOrange = styled.div<ScorebugOrangeProps>`
   height: 94px;
-  width: 100px;
-  background-color: orange;
+  width: 425px;
+  background-color: ${(props) => props.backgroundColor};
   color: black;
   font-size: 59px;
-  margin: right;
+  margin: auto;
   position: absolute;
   top: 1px;
-  right: 703px;
-  text-align: center;
+  right: 366px;
+  text-align: left;
   justify-content: center;
+  padding-left: 20px;
 `;
 
 export const LogoBlueTeam = styled.image`
@@ -118,14 +128,14 @@ export const LogoOrangeTeam = styled.image`
 export const BlueTeamName = styled.div`
   height: 94px;
   width: 335px;
-  background-color: trnaparent;
+  background-color: rgba(0, 0, 0, 0.25);
   color: black;
-  font-size: 35px;
+  font-size: 27px;
   margin: auto;
   position: absolute;
   top: 1px;
   left: 365px;
   text-align: left;
   justify-content: center;
-  vertical-align: center;
+  line-height: 2em;
 `;

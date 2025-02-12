@@ -49,8 +49,11 @@ const getDemosFromPlayers = (players: USPlayer[]) => {
   return players.map((player) => player.demos);
 };
 
-const GetTeamFromPlayers = (players: USPlayer[]) => {
-  return players.map((player) => player.team);
+const getTeamFromTarget = (
+  players: USPlayer[],
+  target: string
+): USPlayer | undefined => {
+  return players.find((player) => target.includes(player.name));
 };
 
 export const GameService = {
@@ -64,5 +67,5 @@ export const GameService = {
   getShotsFromPlayers,
   getSavesFromPlayers,
   getDemosFromPlayers,
-  GetTeamFromPlayers,
+  getTeamFromTarget,
 };
