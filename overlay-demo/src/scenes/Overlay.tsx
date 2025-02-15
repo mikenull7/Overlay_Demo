@@ -11,6 +11,7 @@ import { PlayerBoostMeter } from "../components/PlayerBoostMeter/PlayerBoostMete
 import { PlayerStatCard } from "../components/PlayerStatCard/PlayerStatCard";
 import { TeamBoostMeters } from "../components/TeamBoostMeter/TeamBoostMeter";
 import { ScoreCard } from "../components/ScoreCard/ScoreCard";
+import StatfeedBanner from "../../src/components/StatfeedEvents/StatfeedBanner"; // Make sure to import correctly
 
 export const Overlay = () => {
   const websocket = useContext(websocketContext);
@@ -55,7 +56,6 @@ export const Overlay = () => {
   // Subscribe to "statfeed_event" for events like goal, assist, demo, etc.
   useEffect(() => {
     websocket.subscribe("game", "statfeed_event", (data: StatfeedEvent) => {
-      console.log("Statfeed Event Received:", data);
       setStatfeedInfo(data);
     });
   }, []);
@@ -78,6 +78,7 @@ export const Overlay = () => {
         <PlayerBoostMeter />
         <PlayerStatCard />
         <TeamBoostMeters />
+        <StatfeedBanner /> {/* Use the StatfeedBanner here */}
       </StatfeedInfoContext.Provider>
     </GoalScoredContext.Provider>
   );

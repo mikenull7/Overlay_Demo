@@ -5,6 +5,12 @@ interface BoostContainerProps {
   fill: string;
 }
 
+export const TeamBoostMeterWrapper = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+`;
+
 export const TeamBoostMetersAll = styled.div`
   font-family: Race Sport;
   height: 250px;

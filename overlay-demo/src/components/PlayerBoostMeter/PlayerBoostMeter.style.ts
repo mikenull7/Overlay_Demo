@@ -6,7 +6,9 @@ export const BoostMeterRing = styled.circle<{ $dashOffset: number }>`
 
 export const BoostMeterInnerCircle = styled.circle``;
 
-export const BoostMeterFill = styled.circle``;
+export const BoostMeterFill = styled.circle`
+  opacity: 1;
+`;
 
 export const BoostMeterText = styled.text`
   font-family: Race Sport;
