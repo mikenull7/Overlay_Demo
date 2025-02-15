@@ -1,18 +1,38 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 interface NamePlateProps {
   backgroundColor: string;
 }
 
+// Keyframe animations for fade-in and fade-out effects.
+// Define fade-in and fade-out animations
+const fadeIn = keyframes`
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+`;
+
+const fadeOut = keyframes`
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+`;
+
 // Statfeed Container
 export const StatfeedContainer = styled.div`
   position: absolute;
   top: 15px;
-  left: 1640px;
+  left: 1700px;
   z-index: 1000;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 10px;
   font-family: Inter;
   width: 130px;
   font-size: 20px;
@@ -31,6 +51,11 @@ export const StatfeedEvent = styled.div`
   height: 30px;
   justify-content: flex-end;
   width: 200px;
+  animation: ${fadeIn} 0.5s forwards; /* Apply fade-in animation */
+
+  &.fade-out {
+    animation: ${fadeOut} 1s forwards; /* Apply fade-out animation when triggered */
+  }
 `;
 
 // Statfeed Icon Container
@@ -106,27 +131,4 @@ export const StatfeedSecondaryName = styled.div<NamePlateProps>`
   padding-top: 3px;
   padding-right: 5px;
   z-index: 0;
-`;
-
-// Keyframe animations for fade-in and fade-out effects.
-export const fadeIn = `
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-`;
-
-export const fadeOut = `
-  @keyframes fadeOut {
-    0% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
-  }
 `;

@@ -93,8 +93,14 @@ const StatfeedBanner = () => {
 
     // Automatically remove events after a certain period (3 seconds)
     setTimeout(() => {
-      setEvents((prevEvents) => prevEvents.filter((_, index) => index !== 0)); // Remove the first event
-    }, 30000); // 3-second timer for each event
+      const eventElement = document.querySelector(`.fade-in`);
+      if (eventElement) {
+        eventElement.classList.add("fade-out"); // Trigger fade-out animation
+      }
+      setTimeout(() => {
+        setEvents((prevEvents) => prevEvents.filter((_, index) => index !== 0)); // Remove the first event after fade-out
+      }, 1000); // Match duration of fade-out animation
+    }, 3000); // 3-second timer for each event
   };
 
   return (

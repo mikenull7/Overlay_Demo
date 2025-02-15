@@ -16,7 +16,7 @@ export const TeamBoostMetersAll = styled.div`
   height: 250px;
   width: 1920px;
   background-color: transparent;
-  top: 100px;
+  top: 200px;
   position: absolute;
   display: inline;
   flex-flow: row nowrap;
